@@ -1,0 +1,345 @@
+1 阐述运算符和表达式的概念并编写案例测试算数运算符的使用
+
+	运算符 : 连接常量或者变量的符号
+	表达式 : 用运算符连接起来的式子叫做表达式
+	
+	运算符 :
+		1 算数运算符 :  + - * / % 
+			/ : 拿到两个数据相除之后的商		6/4=1
+			% : 拿到两个数据相除之后的余数		6%4=2
+			注意事项 : 两个整数相除只能得到整数,要想得到小数,必须有小数参与运算  6/4.0=1.5
+			
+		2 赋值运算符 : 
+			基本的 =    
+			扩展的 +=  -=  *=  /=  %=  把符号左边的变量和符号右边的数据做运算,在把结果赋值给左边的变量
+			注意事项 : 扩展的赋值运算符隐含了一个强制转换
+			int a = 10;
+			a /= 2 ; // 	a = a / 2 ;
+			System.out.println("a:"+a);// a:5
+			
+			byte b = 10;
+			b += 10; // b = (byte)(b + 10);
+				
+		3 关系运算符 : ==  !=  >  >=  <   <=
+			用关系运算符连接起来的式子叫做关系表达式,关系表达式的结果是一个boolean的值  ***
+			a > b    
+			
+		4 逻辑运算符 : 
+			&& : 有false则false , 具备短路作用,当左边为false右边不执行   
+			&  : 有false则false
+			|| : 有true则true , 具备短路作用 , 当左边为true右边不执行   
+			|  : 有false则false
+			!  : 非false则true , 非true则false		
+			^  : 相同为false , 不同为true	
+			
+		5 三元运算符
+			格式 : 关系表达式 ? 表达式1 : 表达式2 ;
+			执行流程 :
+				1 首先计算关系表达式的值
+					true  : 执行表达式1
+					false : 执行表达式2
+					
+		6 自增自减运算符
+			++ : 自增 , 自身加一 
+			-- : 自减 , 自身减一
+			
+			单独使用 : ++,--在变量前或者变量后,对结果是没有影响的
+			参与其他操作 :  了解!
+				++,--如果在变量前, 先自增或者自减,在参与其他操作
+				++,--如果在变量后, 先参与其他操作,再自增或者自减
+				
+			int a = 10;
+			// a++;
+			// ++a;
+			
+			// int b = a++;
+			int b = --a;
+			System.out.println("a:"+a);
+			System.out.println("b:"+b);
+	
+
+2 独立编写字符和字符串参与加法运算的案例
+
+	字符参与运算 : 拿到字符在计算机中对应的数据值
+		'a' = 97  'b' = 98  'c' = 99 ...
+		'A' = 65
+		'0' = 48
+		
+		System.out.println('A' + 2); // 67
+		char c = 'A' + 2; // 'C'
+		int c = 'A' + 2; // 67
+		
+	字符串参与加法运算 : 加法符号起到的是拼接作用,拼接之后是一个新的字符串
+	System.out.println("hello"+10+10);// "hello1010"
+	System.out.println(10+10+"hello");// "20hello"
+
+3 独立编写测试自增自减运算符使用的案例
+	自增自减运算符
+		++ : 自增 , 自身加一 
+		-- : 自减 , 自身减一
+		
+		单独使用 : ++,--在变量前或者变量后,对结果是没有影响的
+		参与其他操作 :  了解!
+			++,--如果在变量前, 先自增或者自减,在参与其他操作
+			++,--如果在变量后, 先参与其他操作,再自增或者自减
+			
+		int a = 10;
+		// a++;
+		// ++a;
+		
+		// int b = a++;
+		int b = --a;
+		System.out.println("a:"+a);
+		System.out.println("b:"+b);
+	
+	
+
+4 独立编写测试赋值运算符使用的案例
+
+	赋值运算符 : 
+		基本的 =    
+		扩展的 +=  -=  *=  /=  %=  把符号左边的变量和符号右边的数据做运算,在把结果赋值给左边的变量
+		注意事项 : 扩展的赋值运算符隐含了一个强制转换
+		int a = 10;
+		a /= 2 ; // 	a = a / 2 ;
+		System.out.println("a:"+a);// a:5
+		
+		byte b = 10;
+		b += 10; // b = (byte)(b + 10);
+
+5 独立编写测试关系运算符使用的案例
+
+	关系运算符 : ==  !=  >  >=  <   <=
+		用关系运算符连接起来的式子叫做关系表达式,关系表达式的结果是一个boolean的值  ***
+		a > b  
+
+6 独立编写测试逻辑运算符使用的案例
+	逻辑运算符 : 
+		&& : 有false则false , 具备短路作用,当左边为false右边不执行  	*** 
+		&  : 有false则false
+		|| : 有true则true , 具备短路作用 , 当左边为true右边不执行   	*** 
+		|  : 有true则true
+		!  : 非false则true , 非true则false								*** 
+		^  : 相同为false , 不同为true	
+
+7 独立编写使用三元运算符比较两个数是否相等的案例
+	三元运算符
+		格式 : 关系表达式 ? 表达式1 : 表达式2 ;
+		执行流程 :
+			1 首先计算关系表达式的值
+				true  : 执行表达式1
+				false : 执行表达式2
+	
+	int a = 10;
+	int b = 20;
+	
+	String s = ( a == b ? "相等" : "不相等" ); 
+	System.out.println("s:"+s);
+	
+	boolean bb = (a == b ? true : false);
+	System.out.println("bb:"+bb);
+	
+	System.out.println(a==b);
+
+8 独立编写键盘录入两个数字并求和的案例
+	键盘录入 : 提高代码的灵活性
+	
+	键盘录入的使用步骤 :
+		1 导包 : import java.util.Scanner;   快捷键 :ctrl + shift + o
+		2 创建对象 : Scanner sc = new Scanner(System.in);
+		3 录入数据 : int 变量名 = sc.nextInt();
+		
+		
+	public static void main(String[] args) {
+		// 创建对象
+		Scanner sc = new Scanner(System.in);
+
+		// System.out.println("录入一个整数:");
+		// int num = sc.nextInt();
+		// System.out.println("num:" + num);
+		//
+		// System.out.println("录入一个boolean类型的数据:");
+		// boolean b = sc.nextBoolean();
+		// System.out.println("b:" + b);
+	
+		// System.out.println("录入一个double类型的数据:");
+		// double d = sc.nextDouble();
+		// System.out.println("d:" + d);
+
+		System.out.println("录入一个String类型的数据:");
+		// String s = sc.next();
+		String s = sc.nextLine();
+		System.out.println("s:" + s);
+
+	}
+	
+	public static void main(String[] args) {
+		// 创建对象
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("录入一个int类型的数据:");
+		int num = sc.nextInt();
+		System.out.println("num:" + num);
+		
+		sc.nextLine();
+
+		System.out.println("录入一个String类型的数据:");
+		String s = sc.nextLine();
+		System.out.println("s:" + s);
+
+	}
+	
+10 阐述流程控制语句的分类
+	
+	流程控制语句:
+		1 顺序结构语句 : 代码从上往下一次执行
+		2 选择结构语句 :
+			a: if语句
+			b: switch语句
+		3 循环结构语句
+			a: for循环
+			b: while循环
+ 			c: do...while循环
+
+
+9 阐述if语句的三种使用格式及执行流程
+	
+	if(关系表达式){
+		语句体;
+	}
+
+	
+	if(关系表达式){
+		语句体1;
+	}else{
+		语句体2;
+	}
+	
+	
+	
+	if(关系表达式1){
+		语句体1;
+	}else if(关系表达式2){
+		语句体2;
+	}else if(关系表达式3){
+		语句体3;
+	}...else{
+		语句体n;
+	}
+
+
+11 独立编写测试if语句三种使用格式的案例
+
+	1  判断一个数据是否是偶数
+	
+	2   判断一个数据是否是奇偶数
+		键盘录入两个数据求最大值
+	
+	3 键盘录入学生的成绩,打印对应的级别
+
+12 独立编写根据学生成绩输出对应级别的案例
+	
+
+13 阐述switch语句的格式和执行流程
+
+	switch(表达式){// byte,short,char,int  JDK5枚举 JDK7字符串
+		case 值1:
+			语句体1;
+			break;
+		case 值2:
+			语句体2;
+			break;
+		case 值3:
+			语句体3;
+			break;
+		...
+		default:
+			语句体n;
+			break;
+	}
+
+14 独立编写根据数字输出对应的星期几的案例
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("请输入一个月份(1-12):");
+		int month = sc.nextInt();
+
+		switch (month) {
+		case 3:
+			System.out.println("春季");
+			break;
+		case 4:
+			System.out.println("春季");
+			break;
+		case 5:
+			System.out.println("春季");
+			break;
+
+		case 6:
+			System.out.println("夏季");
+			break;
+		case 7:
+			System.out.println("夏季");
+			break;
+		case 8:
+			System.out.println("夏季");
+			break;
+
+		case 9:
+			System.out.println("秋季");
+			break;
+		case 10:
+			System.out.println("秋季");
+			break;
+		case 11:
+			System.out.println("秋季");
+			break;
+
+		case 12:
+			System.out.println("冬季");
+			break;
+		case 1:
+			System.out.println("冬季");
+			break;
+		case 2:
+			System.out.println("冬季");
+			break;
+
+		default:
+			System.out.println("录入的月份有误!");
+			break;
+		}
+
+		System.out.println("----------");
+
+		switch (month) {// 4
+		case 3:
+		case 4:
+		case 5:
+			System.out.println("春季");
+			break;
+
+		case 6:
+		case 7:
+		case 8:
+			System.out.println("夏季");
+			break;
+
+		case 9:
+		case 10:
+		case 11:
+			System.out.println("秋季");
+			break;
+
+		case 12:
+		case 1:
+		case 2:
+			System.out.println("冬季");
+			break;
+
+		default:
+			System.out.println("录入的月份有误!");
+			break;
+		}
+	}
